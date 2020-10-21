@@ -45,7 +45,7 @@ componentDidMount() {
           width: imports[index].width,
           size: imports[index].size,
           number: imports[index].number,
-          weigth: imports[index].weigth,
+          weight: imports[index].weight,
           price: imports[index].price,
           note: imports[index]. note,
         })
@@ -82,7 +82,7 @@ componentDidMount() {
       width: this.state.width,
       size: this.state.size,
       number: this.state.number,
-      weigth: this.state.weigth,
+      weight: this.state.weight,
       price: this.state.price,
       note: this.state.note
     }
@@ -103,6 +103,8 @@ componentDidMount() {
       note: ''
     })
   }
+
+
 
     render() {
         return (
