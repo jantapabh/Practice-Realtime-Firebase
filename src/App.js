@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import fire from './fire';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  state = {
+    text: ""
+  }
+
+  handleText = e => {
+    this.setState({
+      text: e.target.value
+    })
+  }
+
+  handleSubmit = e => {
+    let massageRef = fire.database().ref('messages').orderByKey().limitToLast(100);
+    fire.database().ref('messages').push(this.state.text)
+    this.setState({
+      text: ""
+    })
+
+  }
+
+
+  render() {
+    return (
+      <div className="App-header">
+        <input type="text" id="inputText" onChange={this.handleText} id="inputText" />
+        <button onClick={this.handleSubmit}>Save</button>
+      </div>
+    )
+  }
 }
+
 
 export default App;
