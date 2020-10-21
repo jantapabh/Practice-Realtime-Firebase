@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import fire from './fire'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
-import FormInputIn from './FormInputIn'
-
 
 class App extends Component {
 
@@ -111,7 +109,65 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-     <FormInputIn />
+        <nav class="navbar navbar-light bg-primary">
+          <span class="navbar-brand mb-0 h1">STOCK</span>
+        </nav>
+        <div className="container" style={{ marginTop: 70 }}>
+          <form onSubmit={this.handleSubmit}>
+            <div className="row">
+              <div className="col-8">
+                <div className="form-row">
+                  <div className="col-4">
+                    <input type="text" name="width" className="form-control" placeholder="width" onChange={this.handleChange} value={this.state.width} />
+                  </div>
+                  <div className="col-6">
+                    <input type="text" name="size" className="form-control" placeholder="size" onChange={this.handleChange} value={this.state.size} />
+                  </div><div className="col-4">
+                    <input type="text" name="color" className="form-control" placeholder="color" onChange={this.handleChange} value={this.state.color} />
+                  </div>
+                  <div className="col-6">
+                    <input type="text" name="number" className="form-control" placeholder="number" onChange={this.handleChange} value={this.state.number} />
+                  </div>
+                  <div className="col-6">
+                    <button class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          {/* <hr />
+          {
+            this.state.items.map((item) => {
+              return (
+                <tr>
+                  <Table striped bordered hover>
+                    <thead>
+                      <tr>
+                        <th>ความหนา</th>
+                        <th>สี</th>
+                        <th>ขนาด</th>
+                        <th>จำนวน</th>
+                        <th>เพิ่มเติม</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{item.width}</td>
+                        <td>{item.color}</td>
+                        <td>{item.size}</td>
+                        <td>{item.number}</td>
+                        <td>
+                          <td><button className="btn btn-danger btn-sm" onClick={() => this.removeItem(item.item_id)}>Delete</button></td>
+                          <td><button className="btn btn-warning btn-sm" onClick={() => this.handleUpdate(item.item_id, item.title, item.description)}>Edit</button></td></td>
+                      </tr>
+                    </tbody>
+                  </Table>
+
+                </tr>
+              )
+            })
+          } */}
+        </div>
       </div >
     );
   }
