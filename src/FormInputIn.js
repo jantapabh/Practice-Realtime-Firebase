@@ -104,35 +104,6 @@ componentDidMount() {
     })
   }
 
-//   //ส่วนของการอัพเดพข้อมูล
-//   handleUpdate = (item_id = null, width = null, size = null, color = null, number = null) => {
-//     this.setState({ item_id, width, size, color, number })
-//   }
-
-//   updateItem() {
-
-//     var obj = { width: this.state.width, size: this.state.size, color: this.state.color, number: this.state.number }
-
-//     const itemsRef = fire.database().ref('/items')
-
-//     itemsRef.child(this.state.item_id).update(obj);
-
-//     this.setState({
-//       item_id: '',
-//       width: '',
-//       size: '',
-//       color: '',
-//       number: ''
-//     })
-
-//   }
-
-  //ส่วนการลบข้อมูล
-//   removeItem(itemId) {
-//     const itemsRef = fire.database().ref('/items');
-//     itemsRef.child(itemId).remove();
-//   }
-
     render() {
         return (
             <div>
@@ -140,36 +111,38 @@ componentDidMount() {
                     <div className="row">
                         <div className="col-8">
                             <div className="form-row">
-                                <div className="col-4">
+                                <div className="col-6">
                                     <input type="text" name="date" className="form-control" placeholder="Input Date" onChange={this.handleChange} value={this.state.date} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="name" className="form-control" placeholder="size" onChange={this.handleChange} value={this.state.naem} />
-                                </div><div className="col-4">
-                                    <input type="text" name="bill_num" className="form-control" placeholder="color" onChange={this.handleChange} value={this.state.bill_num} />
+                                    <input type="text" name="name" className="form-control" placeholder="Input Size" onChange={this.handleChange} value={this.state.naem} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="item_num" className="form-control" placeholder="number" onChange={this.handleChange} value={this.state.item_num} />
-                                </div>
-                                <div className="col-4">
-                                    <input type="text" name="color" className="form-control" placeholder="width" onChange={this.handleChange} value={this.state.color} />
+                                    <input type="text" name="bill_num" className="form-control" placeholder="Input Bill Number" onChange={this.handleChange} value={this.state.bill_num} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="width" className="form-control" placeholder="size" onChange={this.handleChange} value={this.state.width} />
-                                </div><div className="col-4">
-                                    <input type="text" name="size" className="form-control" placeholder="color" onChange={this.handleChange} value={this.state.size} />
+                                    <input type="text" name="item_num" className="form-control" placeholder="Item Number" onChange={this.handleChange} value={this.state.item_num} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="number" className="form-control" placeholder="number" onChange={this.handleChange} value={this.state.number} />
+                                    <input type="text" name="color" className="form-control" placeholder="Input Color" onChange={this.handleChange} value={this.state.color} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="weight" className="form-control" placeholder="number" onChange={this.handleChange} value={this.state.weight} />
+                                    <input type="text" name="width" className="form-control" placeholder="Input Width" onChange={this.handleChange} value={this.state.width} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="price" className="form-control" placeholder="number" onChange={this.handleChange} value={this.state.price} />
+                                    <input type="text" name="size" className="form-control" placeholder="Input Size" onChange={this.handleChange} value={this.state.size} />
                                 </div>
                                 <div className="col-6">
-                                    <input type="text" name="note" className="form-control" placeholder="number" onChange={this.handleChange} value={this.state.note} />
+                                    <input type="text" name="number" className="form-control" placeholder="Input Number" onChange={this.handleChange} value={this.state.number} />
+                                </div>
+                                <div className="col-6">
+                                    <input type="text" name="weight" className="form-control" placeholder="Input Weight" onChange={this.handleChange} value={this.state.weight} />
+                                </div>
+                                <div className="col-6">
+                                    <input type="text" name="price" className="form-control" placeholder="Input Price" onChange={this.handleChange} value={this.state.price} />
+                                </div>
+                                <div className="col-6">
+                                    <input type="text" name="note" className="form-control" placeholder="Input Note" onChange={this.handleChange} value={this.state.note} />
                                 </div>
                                 <div className="col-6">
                                     <button class="btn btn-primary">Save</button>
