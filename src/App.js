@@ -5,7 +5,6 @@ import fire from './fire';
 
 
 class App extends Component {
-
   state = {
     text: ""
   }
